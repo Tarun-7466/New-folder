@@ -1,6 +1,7 @@
 var active = 3;
 let smcircle = document.querySelectorAll(".smcircle");
 let sec = document.querySelectorAll(".sec");
+let heading = document.querySelector("h3");
 
 gsap.to('#circle', {
     rotate: 0,
@@ -17,17 +18,20 @@ smcircle.forEach(function (value, index) {
         gsap.to('#circle', {
             rotate: (3 - (index + 1)) * 10,
         })
+        gsap.to('h3', {
+            rotate: -(3 - (index + 1)) * 10,
+        })
         geryout();
         gsap.to(this, {
-            opacity: 0.6,
+            opacity: 1,
             ease: Expo.easeInOut,
-            duration: 2
+            duration: 1
         })
         gsap.to(sec[index], {
             opacity: 1,
-            scale: 1.1,
+            scale: 1.09,
             ease: Expo.easeIn,
-            duration: 0.8,
+            duration: 1,
             
 
         })
